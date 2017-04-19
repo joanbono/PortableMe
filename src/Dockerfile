@@ -13,6 +13,7 @@ RUN curl -fLo ~/.vim/colors/molokai.vim --create-dirs https://raw.githubusercont
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 RUN wget https://raw.githubusercontent.com/joanbono/dotfiles/master/src/.vimrc -O ~/.vimrc
 RUN wget https://raw.githubusercontent.com/joanbono/dotfiles/master/src/.tmux.conf -O ~/.tmux.conf
+RUN wget https://raw.githubusercontent.com/joanbono/dotfiles/master/src/.radare2rc -O ~/.radare2rc
 RUN git clone https://github.com/radare/radare2
 RUN cd radare2 && sys/install.sh
 RUN echo "alias grep='grep --color'" >> ~/.bashrc
