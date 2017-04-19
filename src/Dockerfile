@@ -20,4 +20,5 @@ RUN echo "alias grep='grep --color'" >> ~/.bashrc
 RUN echo "alias gdb='gdb -q'" >> ~/.bashrc
 RUN wget https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz -O go.tar.gz && tar -zxvf go.tar.gz -C /usr/local 
 RUN echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
+RUN rm -r go.tar.gz
 CMD ["/bin/bash"]
