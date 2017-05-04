@@ -3,8 +3,10 @@
 FROM debian:latest
 MAINTAINER Joan Bono <@joan_bono>
 RUN apt-get update 
-RUN apt-get install -y vim git gdb gcc curl wget tmux make python-pip
+RUN apt-get install -y vim git gdb gcc curl wget tmux make python-pip tor
 RUN apt-get install -y build-essential autotools-dev
+RUN echo "ControlPort 9051" >> /etc/tor/torrc
+RUN echo "CookieAuthentication 0" >> /etc/tor/torrc
 RUN pip install r2pipe
 RUN git clone https://github.com/longld/peda.git ~/peda
 RUN echo "source ~/peda/peda.py" >> ~/.gdbinit
